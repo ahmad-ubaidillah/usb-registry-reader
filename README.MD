@@ -17,7 +17,7 @@ A lightweight Python GUI tool to extract USB-related information from a Windows 
 
 2. **Create and activate a virtual environment:**
    ```bash
-    python -m venv venv
+    python3 -m venv venv
     # Activate on Windows:
     venv\Scripts\activate
     # Activate on macOS/Linux:
@@ -27,10 +27,17 @@ A lightweight Python GUI tool to extract USB-related information from a Windows 
 3. **Install the dependencies:**
 
    ```bash
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
    ```
 
-4. **Run the tool:**
+4. **Install tkinter on Linux / Mac (Optional, If you doesn't have it):**
+
+   ```bash
+   sudo apt update
+   sudo apt install python3-tk
+   ```
+
+5. **Run the tool:**
 
    ```bash
     python usb-registry-reader.py
