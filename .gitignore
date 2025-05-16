@@ -1,0 +1,16 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Log file
+registry_reader.log
+
+# System files
+.DS_Store
+Thumbs.db
