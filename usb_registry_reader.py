@@ -86,6 +86,9 @@ class RegistryHiveReader:
         ttk.Button(self.search_frame, text="Search", 
                   command=self.search_text).pack(side=tk.LEFT, padx=2)
         
+        ttk.Button(self.search_frame, text="Clear", 
+                  command=self.clear_search).pack(side=tk.LEFT, padx=2)
+        
     def create_progress_section(self):
         self.progress_bar = ttk.Progressbar(self.root, orient="horizontal", 
                                           length=600, mode="determinate",
@@ -312,6 +315,12 @@ class RegistryHiveReader:
             
         self.text.tag_config("highlight", background="yellow", foreground="black")
         self.status_bar.config(text=f"Found {count} matches")
+
+    def clear_search(self):
+        """Clear search field and remove highlights"""
+        self.search_entry.delete(0, tk.END)
+        self.text.tag_remove("highlight", "1.0", tk.END)
+        self.status_bar.config(text="Search cleared")
         
     def on_closing(self):
         if messagebox.askokcancel("Quit", "Do you want to quit?"):
